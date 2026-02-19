@@ -47,10 +47,10 @@
 
                     <div class="form-group">
                         <label class="form-label">Currency Base</label>
-                        <select class="form-select">
-                            <option>USD ($)</option>
-                            <option>EUR (€)</option>
-                            <option>GBP (£)</option>
+                        <select class="form-select" id="currency-select">
+                            <option value="USD">USD ($)</option>
+                            <option value="EUR">EUR (€)</option>
+                            <option value="GBP">GBP (£)</option>
                         </select>
                     </div>
                 </div>
@@ -59,7 +59,7 @@
                     <h3>Budget Limits</h3>
                     <div class="form-group">
                         <label class="form-label">Monthly Spending Cap</label>
-                        <input type="number" class="form-input" value="1500">
+                        <input type="number" class="form-input" value="1500" id="budget-input">
                     </div>
 
                 </div>
@@ -69,6 +69,8 @@
 
 
 
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/settings.js"></script>
 </body>
 
 </html>

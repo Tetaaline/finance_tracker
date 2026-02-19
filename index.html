@@ -44,20 +44,23 @@
             <div class="grid-3">
                 <div class="card">
                     <h3>Total Balance</h3>
-                    <div
-                        style="font-size: 2.5rem; font-weight: 700; color: var(--color-text-primary); margin: 0.5rem 0;">
-                        $1,250.00</div>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--color-text-primary); margin: 0.5rem 0;"
+                        id="total-balance">
+                        $0.00
+                    </div>
 
                 </div>
                 <div class="card">
                     <h3>Total Income</h3>
-                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--color-primary); margin: 0.5rem 0;">
-                        $2,400.00</div>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--color-primary); margin: 0.5rem 0;"
+                        id="total-income">
+                        $0.00</div>
                 </div>
                 <div class="card">
                     <h3>Total Expenses</h3>
-                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--color-danger); margin: 0.5rem 0;">
-                        $1,150.00</div>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--color-danger); margin: 0.5rem 0;"
+                        id="total-expenses">
+                        $0.00</div>
                 </div>
             </div>
 
@@ -73,68 +76,10 @@
 
     <!-- Chart.js CDN -->
     <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script>
-        const ctx = document.getElementById('spendingChart').getContext('2d');
+    <script src="scripts/utils.js"></script>
+    <script src="scripts/dashboard.js"></script>
 
 
-
-        new Chart(ctx, {
-            type: 'bar',
-            data: {
-                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
-                datasets: [{
-                    label: 'Spending',
-                    data: [65, 59, 80, 81, 56, 55, 40],
-                    backgroundColor: '#818cf8',
-                    borderRadius: 4,
-                    borderWidth: 0
-                }]
-            },
-            options: {
-                responsive: true,
-                maintainAspectRatio: false,
-                plugins: {
-                    legend: {
-                        display: false
-                    },
-                    tooltip: {
-                        backgroundColor: 'rgba(30, 41, 59, 0.9)', // Dark tooltip
-                        titleColor: '#fff',
-                        bodyColor: '#cbd5e1',
-                        padding: 10,
-                        cornerRadius: 8,
-                        displayColors: false
-                    }
-                },
-                scales: {
-                    x: {
-                        grid: {
-                            display: false,
-                            drawBorder: false
-                        },
-                        ticks: {
-                            color: '#94a3b8' // Muted text
-                        }
-                    },
-                    y: {
-                        grid: {
-                            color: 'rgba(148, 163, 184, 0.1)',
-                            drawBorder: false
-                        },
-                        ticks: {
-                            color: '#94a3b8',
-                            callback: function (value) {
-                                return '$' + value;
-                            }
-                        },
-                        beginAtZero: true
-                    }
-                }
-            }
-        });
-    </script>
-
-    </main>
 
 
 
