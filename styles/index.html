@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard - Student Finance Tracker</title>
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/layout.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="container">
+        <nav class="main-nav">
+            <a href="index.html" class="nav-logo">
+                <span>&#36;</span> StudentFi
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                &#9776;
+            </button>
+            <div class="nav-links">
+                <a href="index.html" class="active">Dashboard</a>
+                <a href="records.html">Records</a>
+                <a href="add.html">Add New</a>
+                <a href="settings.html">Settings</a>
+                <a href="about.html">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+
+        <!-- DASHBOARD SECTION -->
+        <section id="dashboard" class="fade-in">
+            <div class="header-hero">
+                <h1>Financial Overview</h1>
+                <p>Track your student budget efficiently.</p>
+            </div>
+
+            <div class="grid-3">
+                <div class="card">
+                    <h3>Total Balance</h3>
+                    <div
+                        style="font-size: 2.5rem; font-weight: 700; color: var(--color-text-primary); margin: 0.5rem 0;">
+                        $1,250.00</div>
+
+                </div>
+                <div class="card">
+                    <h3>Total Income</h3>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--color-primary); margin: 0.5rem 0;">
+                        $2,400.00</div>
+                </div>
+                <div class="card">
+                    <h3>Total Expenses</h3>
+                    <div style="font-size: 2.5rem; font-weight: 700; color: var(--color-danger); margin: 0.5rem 0;">
+                        $1,150.00</div>
+                </div>
+            </div>
+
+            <div class="card" style="margin-top: var(--spacing-lg);">
+                <h3>Spending Trends (Last 7 Days)</h3>
+                <div style="height: 300px; width: 100%;">
+                    <canvas id="spendingChart"></canvas>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script>
+        const ctx = document.getElementById('spendingChart').getContext('2d');
+
+
+
+        new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: ['Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat', 'Sun'],
+                datasets: [{
+                    label: 'Spending',
+                    data: [65, 59, 80, 81, 56, 55, 40],
+                    backgroundColor: '#818cf8',
+                    borderRadius: 4,
+                    borderWidth: 0
+                }]
+            },
+            options: {
+                responsive: true,
+                maintainAspectRatio: false,
+                plugins: {
+                    legend: {
+                        display: false
+                    },
+                    tooltip: {
+                        backgroundColor: 'rgba(30, 41, 59, 0.9)', // Dark tooltip
+                        titleColor: '#fff',
+                        bodyColor: '#cbd5e1',
+                        padding: 10,
+                        cornerRadius: 8,
+                        displayColors: false
+                    }
+                },
+                scales: {
+                    x: {
+                        grid: {
+                            display: false,
+                            drawBorder: false
+                        },
+                        ticks: {
+                            color: '#94a3b8' // Muted text
+                        }
+                    },
+                    y: {
+                        grid: {
+                            color: 'rgba(148, 163, 184, 0.1)',
+                            drawBorder: false
+                        },
+                        ticks: {
+                            color: '#94a3b8',
+                            callback: function (value) {
+                                return '$' + value;
+                            }
+                        },
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+
+    </main>
+
+
+
+</body>
+
+</html>

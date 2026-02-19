@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Records - Student Finance Tracker</title>
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/layout.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="container">
+        <nav class="main-nav">
+            <a href="index.html" class="nav-logo">
+                <span>&#36;</span> StudentFi
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                &#9776;
+            </button>
+            <div class="nav-links">
+                <a href="index.html">Dashboard</a>
+                <a href="records.html" class="active">Records</a>
+                <a href="add.html">Add New</a>
+                <a href="settings.html">Settings</a>
+                <a href="about.html">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- RECORDS SECTION -->
+        <section id="records">
+            <div
+                style="display: flex; justify-content: space-between; align-items: center; margin-bottom: var(--spacing-lg); flex-wrap: wrap; gap: 1rem;">
+                <h2>Transactions</h2>
+                <div style="display: flex; gap: 0.5rem; flex-wrap: wrap;">
+                    <input type="text" placeholder="Search..." class="form-input" style="width: 200px;">
+                    <select class="form-select" style="width: 150px;">
+                        <option>Sort by Date</option>
+                        <option>Sort by Amount</option>
+                    </select>
+                </div>
+            </div>
+
+            <!-- Responsive Table Wrapper -->
+            <div class="table-container">
+                <table class="table">
+                    <thead>
+                        <tr>
+                            <th>Date</th>
+                            <th>Description</th>
+                            <th>Category</th>
+                            <th>Amount</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td data-label="Date">2025-09-29</td>
+                            <td data-label="Description">Midterm Coffee Run</td>
+                            <td data-label="Category"><span class="badge badge-expense">Food</span></td>
+                            <td data-label="Amount" style="font-weight: 600;">$12.50</td>
+                            <td data-label="Actions">
+                                <button class="btn-secondary"
+                                    style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">Edit</button>
+                                <button class="btn-danger"
+                                    style="padding: 0.25rem 0.5rem; font-size: 0.75rem; border:none;">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Date">2025-09-28</td>
+                            <td data-label="Description">Biology Textbook</td>
+                            <td data-label="Category"><span class="badge badge-expense">Books</span></td>
+                            <td data-label="Amount" style="font-weight: 600;">$89.99</td>
+                            <td data-label="Actions">
+                                <button class="btn-secondary"
+                                    style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">Edit</button>
+                                <button class="btn-danger"
+                                    style="padding: 0.25rem 0.5rem; font-size: 0.75rem; border:none;">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td data-label="Date">2025-09-25</td>
+                            <td data-label="Description">Part-time Job Payout</td>
+                            <td data-label="Category">Income</td>
+                            <td data-label="Amount" style="font-weight: 600; color: var(--color-primary);">+$350.00</td>
+                            <td data-label="Actions">
+                                <button class="btn-secondary"
+                                    style="padding: 0.25rem 0.5rem; font-size: 0.75rem;">Edit</button>
+                                <button class="btn-danger"
+                                    style="padding: 0.25rem 0.5rem; font-size: 0.75rem; border:none;">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </main>
+
+
+
+</body>
+
+</html>

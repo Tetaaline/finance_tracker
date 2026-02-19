@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Settings - Student Finance Tracker</title>
+    <link rel="stylesheet" href="styles/variables.css">
+    <link rel="stylesheet" href="styles/base.css">
+    <link rel="stylesheet" href="styles/components.css">
+    <link rel="stylesheet" href="styles/layout.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="container">
+        <nav class="main-nav">
+            <a href="index.html" class="nav-logo">
+                <span>&#36;</span> StudentFi
+            </a>
+            <button class="nav-toggle" aria-label="Toggle navigation">
+                &#9776;
+            </button>
+            <div class="nav-links">
+                <a href="index.html">Dashboard</a>
+                <a href="records.html">Records</a>
+                <a href="add.html">Add New</a>
+                <a href="settings.html" class="active">Settings</a>
+                <a href="about.html">About</a>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container">
+        <!-- SETTINGS SECTION -->
+        <section id="settings">
+            <h2>Settings</h2>
+            <div class="grid-2">
+                <div class="card">
+                    <h3>Preferences</h3>
+                    <div class="form-group"
+                        style="margin-top: 1rem; display: flex; justify-content: space-between; align-items: center;">
+                        <label>Dark Mode</label>
+                        <input type="checkbox" checked disabled title="Visual Only">
+                    </div>
+
+                    <div class="form-group">
+                        <label class="form-label">Currency Base</label>
+                        <select class="form-select">
+                            <option>USD ($)</option>
+                            <option>EUR (€)</option>
+                            <option>GBP (£)</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="card">
+                    <h3>Budget Limits</h3>
+                    <div class="form-group">
+                        <label class="form-label">Monthly Spending Cap</label>
+                        <input type="number" class="form-input" value="1500">
+                    </div>
+
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+
+</body>
+
+</html>
