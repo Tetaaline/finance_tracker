@@ -22,17 +22,27 @@ function saveRecords(records) {
 }
 
 function getSettings() {
-    return JSON.parse(localStorage.getItem('finance_tracker_settings')) || { currency: 'USD', budget: 1500 };
+    return JSON.parse(localStorage.getItem('finance_tracker_settings')) || { currency: 'USD', budget: 1500, theme: 'dark' };
 }
+
+// Ensure theme is applied on all pages when scripts load
+(function applyInitialTheme() {
+    const settings = getSettings();
+    if (settings.theme === 'light') {
+        document.body.classList.add('light-mode');
+    }
+})();
 
 function formatCurrency(amount) {
     const settings = getSettings();
     const currencyMap = {
-        'USD': '$',
-        'EUR': '€',
-        'GBP': '£'
+        'USD': { symbol: '$', rate: 1.0 },
+        'EUR': { symbol: '€', rate: 0.93 },
+        'GBP': { symbol: '£', rate: 0.79 }
     };
-    const symbol = currencyMap[settings.currency] || '$';
 
-    return symbol + amount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
+    const config = currencyMap[settings.currency] || currencyMap['USD'];
+    const convertedAmount = amount * config.rate;
+
+    return config.symbol + convertedAmount.toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }

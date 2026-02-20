@@ -1,28 +1,70 @@
 /* styles/variables.css */
 :root {
     /* Color Palette - Premium Dark Fintech */
-    --color-bg-body: #0f172a;       /* Slate 900 */
-    --color-bg-card: #1e293b;       /* Slate 800 */
-    --color-bg-card-hover: #334155; /* Slate 700 */
-    
-    --color-text-primary: #f8fafc;  /* Slate 50 */
-    --color-text-secondary: #94a3b8; /* Slate 400 */
-    --color-text-muted: #64748b;    /* Slate 500 */
+    --color-bg-body: #0f172a;
+    /* Slate 900 */
+    --color-bg-card: #1e293b;
+    /* Slate 800 */
+    --color-bg-card-hover: #334155;
+    /* Slate 700 */
 
-    --color-primary: #10b981;       /* Emerald 500 */
-    --color-primary-hover: #059669; /* Emerald 600 */
+    --color-text-primary: #f8fafc;
+    /* Slate 50 */
+    --color-text-secondary: #94a3b8;
+    /* Slate 400 */
+    --color-text-muted: #64748b;
+    /* Slate 500 */
+
+    --color-primary: #10b981;
+    /* Emerald 500 */
+    --color-primary-hover: #059669;
+    /* Emerald 600 */
     --color-primary-glow: rgba(16, 185, 129, 0.4);
 
-    --color-danger: #ef4444;        /* Red 500 */
-    --color-warning: #f59e0b;       /* Amber 500 */
-    --color-info: #3b82f6;          /* Blue 500 */
+    --color-danger: #ef4444;
+    /* Red 500 */
+    --color-warning: #f59e0b;
+    /* Amber 500 */
+    --color-info: #3b82f6;
+    /* Blue 500 */
 
-    --color-border: #334155;        /* Slate 700 */
-    --color-input-bg: #0f172a;      /* Darker input */
+    --color-border: #334155;
+    /* Slate 700 */
+    --color-input-bg: #0f172a;
+    /* Darker input */
 
     /* Gradients */
     --gradient-primary: linear-gradient(135deg, #10b981 0%, #059669 100%);
     --gradient-card: linear-gradient(145deg, rgba(30, 41, 59, 1) 0%, rgba(30, 41, 59, 0.6) 100%);
+}
+
+.light-mode {
+    --color-bg-body: #f8fafc;
+    /* Slate 50 */
+    --color-bg-card: #ffffff;
+    /* White */
+    --color-bg-card-hover: #f1f5f9;
+    /* Slate 100 */
+
+    --color-text-primary: #0f172a;
+    /* Slate 900 */
+    --color-text-secondary: #475569;
+    /* Slate 600 */
+    --color-text-muted: #94a3b8;
+    /* Slate 400 */
+
+    --color-border: #e2e8f0;
+    /* Slate 200 */
+    --color-input-bg: #ffffff;
+
+    --gradient-card: linear-gradient(145deg, rgba(255, 255, 255, 1) 0%, rgba(248, 250, 252, 1) 100%);
+
+    /* Slightly adapt some shadows for better visibility on light bg */
+    --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.03);
+    --shadow-glow: 0 0 15px rgba(16, 185, 129, 0.2);
+}
+
+:root {
 
     /* Typography */
     --font-heading: 'Outfit', sans-serif;
