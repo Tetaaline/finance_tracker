@@ -52,4 +52,4 @@ There are no automated testing pipelines configured. Verification is performed v
 5. **Theme Switch:** Toggle the Theme option in Settings and confirm colors apply globally across all pages.
 
 -Email: a.teta2@alustudent.com
--Github username: Tetaaline
+-Github:https://github.com/Tetaaline/finance_tracker
