@@ -25,6 +25,15 @@ The application uses Regular Expressions (RegExp) to aggressively validate user 
 | **Category** | `/^[A-Za-z]+(?:[ -][A-Za-z]+)*$/`| Alphabetic words optionally separated by spaces or hyphens. | `Dining Out` | `Cat@gory!` |
 | **Currency** | `/^\S(?:.*\S)?$/` | Validates strings with no leading or trailing whitespace. | `USD` | ` USD ` |
 
+## Accessibility & Responsive Design
+
+-Semantic HTML5 (<header>, <nav>, <main>, <section>)
+-ARIA labels for interactive elements
+-Full keyboard navigation (Tab/Shift+Tab, Enter/Space, arrow keys)
+-Focus outlines and visible indicators
+-High color contrast in Dark/Light themes
+-Responsive layout for desktop, tablet, and mobile
+
 
 ## How to Run & Test
 
