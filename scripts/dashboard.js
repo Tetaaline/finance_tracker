@@ -27,6 +27,39 @@ function updateDashboard() {
     const incomeEl = document.getElementById('total-income');
     const expenseEl = document.getElementById('total-expenses');
 
+    // New STATS Elements
+    const recordsEl = document.getElementById('total-records');
+    const volumeEl = document.getElementById('total-volume');
+    const topCatEl = document.getElementById('top-category');
+
+    // Calculate new stats
+    const totalRecordsCount = records.length;
+    let totalVolume = 0;
+    const categoryCounts = {};
+
+    records.forEach(record => {
+        // volume sum
+        totalVolume += record.amount;
+
+        // top category logic
+        if (record.category) {
+            categoryCounts[record.category] = (categoryCounts[record.category] || 0) + 1;
+        }
+    });
+
+    let topCategory = 'N/A';
+    let maxCount = 0;
+    for (const [cat, count] of Object.entries(categoryCounts)) {
+        if (count > maxCount) {
+            maxCount = count;
+            topCategory = cat;
+        }
+    }
+
+    if (recordsEl) recordsEl.innerText = totalRecordsCount;
+    if (volumeEl) volumeEl.innerText = formatCurrency(totalVolume);
+    if (topCatEl) topCatEl.innerText = topCategory;
+
     if (balanceEl) balanceEl.innerText = formatCurrency(totalBalance);
     if (incomeEl) incomeEl.innerText = formatCurrency(totalIncome);
     if (expenseEl) {
