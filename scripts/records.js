@@ -140,7 +140,11 @@ function handleEdit(row, record) {
                 <option value="Entertainment" ${record.category === 'Entertainment' ? 'selected' : ''}>Entertainment</option>
                 <option value="Fees" ${record.category === 'Fees' ? 'selected' : ''}>Fees</option>
                 <option value="Other" ${record.category === 'Other' ? 'selected' : ''}>Other</option>
-                <option value="Income" ${record.category === 'Income' ? 'selected' : ''}>Income</option>
+                <option value="Income" ${record.category === 'Income' ? 'selected' : ''}>Income (General)</option>
+                <option value="Salary" ${record.category === 'Salary' ? 'selected' : ''}>Salary</option>
+                <option value="Gift" ${record.category === 'Gift' ? 'selected' : ''}>Gift</option>
+                <option value="Refund" ${record.category === 'Refund' ? 'selected' : ''}>Refund</option>
+                <option value="Investment" ${record.category === 'Investment' ? 'selected' : ''}>Investment</option>
             </select>
         </td>
         <td data-label="Amount"><input type="number" class="form-input" value="${record.amount}" id="edit-amount-${record.id}" step="0.01"></td>
@@ -162,7 +166,7 @@ function saveEdit(id) {
 
     // Validation
     if (!descriptionRegex.test(description)) {
-        alert('Invalid Description. Only letters, numbers, and spaces are allowed.');
+        alert('Invalid Description. Only letters and spaces are allowed.');
         return;
     }
     if (!amountRegex.test(amount)) {

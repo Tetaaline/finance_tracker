@@ -5,7 +5,7 @@ const CONSTANTS = {
 };
 
 // Regex Patterns
-const descriptionRegex = /^[a-zA-Z0-9 ]+$/;
+const descriptionRegex = /^[a-zA-Z ]+$/;
 const amountRegex = /^(0|[1-9]\d*)(\.\d{1,2})?$/;
 const categoryRegex = /^[A-Za-z]+(?:[ -][A-Za-z]+)*$/;
 // Note: Currency Regex was mentioned in the prompt but not explicitly used for validation of a specific field,

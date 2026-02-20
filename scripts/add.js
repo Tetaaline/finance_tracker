@@ -33,7 +33,7 @@ function handleAddRecord(form) {
 
     // Validation
     if (!descriptionRegex.test(description)) {
-        alert('Invalid Description. Only letters, numbers, and spaces are allowed.');
+        alert('Invalid Description. Only letters and spaces are allowed.');
         return;
     }
     if (!amountRegex.test(amount)) {
